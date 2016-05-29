@@ -1,22 +1,23 @@
----
 language: node_js
 node_js:
-  - "4"
-
+- '4'
 sudo: false
-
 cache:
   directories:
-    - node_modules
-
+  - node_modules
 before_install:
-  - npm config set spin false
-  - npm install -g bower
-  - npm install phantomjs-prebuilt
-
+- npm config set spin false
+- npm install -g bower
+- npm install phantomjs-prebuilt
 install:
-  - npm install
-  - bower install
-
+- npm install
+- bower install
 script:
-  - npm test
+- npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: CojHsNAl7HmWnGUT3C7Ti251X9L4w1NRHTjNflgKfxXnsItRB5ZhPleeogrFfB7uzFmmROmWBgnD9fRsoIBXolclScG0m0mr2HaWd2hSVr+kPKOticUKljqOE7S9UfmaSYOWNHJXLSSf+xbw9//iatPT20nvywCZNwiiQHKWKcCoWh+aslQq7hfUxt5i/oMbKoW6GHxxYBfW4zONuvHDYHD2gzYtyY6pg1q8bitf+P5tcTzSpKzytypX9CWozZrvCzYftMyhU7a2gdpSKFwgSEgYLLvhXjnz21V0WEJBiOr6y0OEiZMyJpL2VrWK3w3OnhbbH+at3jUS1h5DZyWj0iF66haKZPqv80JV03Hx4dyRDW5PGLGwIpd6MfAap8t0epRSLwKhdzHatv30ZNJQ5hVPBa8tQubmYa6ysiEJYL6fT4L6DzqV7IXbBIXClYL6tPkcNmZO1gXiqdKvSvUYB6JKnEEGep4XOnbZ1M/8oCb3XQ8xpZEoHSsGoZA4qxm9Aa5YGb61Z+F6a5USVn8vPavs0z2d031Kbb74d22mdw2zdfBwvUWiiZOhWdYkAvubV37FQMyCEAiA9vdu9qYhfl0lHlEU5xf45GZrKKeLUF+tW9if5OKP2xeoWEjmMQm7uPIctdUJlBlc3YJZtJiqQgiRsp+ics/6WpQxgewYaMc=
+  app: terjepeepchatui
+  on:
+    repo: terkiterje/peepchatui
